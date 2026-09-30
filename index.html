@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parchís</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="menu" class="screen active">
+  <h1 class="logo"><span style="--c:#e53935">P</span><span style="--c:#43a047">A</span><span style="--c:#1e88e5">R</span><span style="--c:#fdd835">C</span><span style="--c:#e53935">H</span><span style="--c:#43a047">Í</span><span style="--c:#1e88e5">S</span></h1>
+  <p class="tagline">El clásico juego de mesa, ahora digital</p>
+  <div class="btns">
+    <button class="btn big" data-go="players">JUGAR</button>
+    <button class="btn" data-go="rules">REGLAS</button>
+    <button class="btn" data-go="credits">CRÉDITOS</button>
+  </div>
+</section>
+
+<section id="players" class="screen">
+  <h2>¿CUÁNTOS JUGADORES?</h2>
+  <div class="btns">
+    <button class="btn big" data-n="2">2 JUGADORES</button>
+    <button class="btn big" data-n="3">3 JUGADORES</button>
+    <button class="btn big" data-n="4">4 JUGADORES</button>
+    <button class="btn ghost" data-go="menu">← Volver</button>
+  </div>
+</section>
+
+<section id="rules" class="screen">
+  <div class="card">
+    <h2>REGLAS</h2>
+    <ul>
+      <li>Cada jugador tiene 4 fichas en casa. Se juega por turnos.</li>
+      <li>Para sacar una ficha de casa necesitas un <b>5</b>.</li>
+      <li>Tras lanzar el dado, pulsa una ficha resaltada para moverla.</li>
+      <li>Si caes sobre una ficha rival fuera de casilla segura (★), la mandas a casa.</li>
+      <li>Las casillas seguras y las de salida no permiten capturas.</li>
+      <li>Tras 64 casillas entras en tu camino final. Necesitas el número exacto para llegar a la meta.</li>
+      <li>Gana quien lleve sus 4 fichas a la meta.</li>
+    </ul>
+    <button class="btn" data-go="menu">Volver</button>
+  </div>
+</section>
+
+<section id="credits" class="screen">
+  <div class="card">
+    <h2>CRÉDITOS</h2>
+    <p>Parchís local · HTML5, CSS3 y JavaScript vanilla.</p>
+    <button class="btn" data-go="menu">Volver</button>
+  </div>
+</section>
+
+<section id="game" class="screen">
+  <div class="layout">
+    <div class="board-wrap"><div id="board"></div></div>
+    <aside class="panel">
+      <div id="turn" class="turn">Turno de ROJO</div>
+      <div class="die-box"><div id="die" class="die"></div></div>
+      <div id="result" class="result">–</div>
+      <button id="rollBtn" class="btn big">🎲 LANZAR DADO</button>
+      <div id="status" class="status"></div>
+      <div id="score" class="score"></div>
+      <button class="btn ghost" id="quitBtn">Salir al menú</button>
+    </aside>
+  </div>
+  <div id="toast" class="toast"></div>
+</section>
+
+<section id="victory" class="screen overlay">
+  <div class="card">
+    <div class="trophy">🏆</div>
+    <h2 id="winTitle">¡ROJO HA GANADO!</h2>
+    <p>¡Todas sus fichas llegaron a la meta!</p>
+    <div class="btns">
+      <button class="btn big" id="again">JUGAR DE NUEVO</button>
+      <button class="btn" id="toMenu">MENÚ PRINCIPAL</button>
+    </div>
+  </div>
+</section>
+
+<script src="game.js"></script>
+</body>
+</html>
